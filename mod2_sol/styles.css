@@ -1,66 +1,68 @@
-body {
-    font-family: Arial, sans-serif;
+/* Global styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
 }
 
 header {
     text-align: center;
-    padding: 20px 0;
+    margin-bottom: 20px;
 }
 
 h1 {
-    margin: 0;
+    font-size: 2em;
+    color: #333;
 }
 
-.menu-container {
+.container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    gap: 15px;
 }
 
+/* Section styling */
 .menu-item {
-    width: 30%;
-    min-width: 250px;
-    margin-bottom: 20px;
-    background-color: #a9a9a9;
+    background-color: #d3d3d3;
     border: 1px solid #000;
-    box-sizing: border-box;
-    position: relative;
-    padding-top: 30px; /* Make room for the title */
+    padding: 20px;
+    position: relative; /* Ensure the title is positioned relative to this */
+    flex: 1 1 30%;
+    min-height: 200px; /* Ensures a minimum height to accommodate content */
+}
+
+.menu-item p {
+    margin-top: 40px; /* Ensures space below the title */
 }
 
 .item-title {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 5px 30px;
+    background-color: #ff9999; /* Change this color for different sections */
     color: #000;
-    font-size: 1.2em;
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
 }
 
-.chicken {
-    background-color: #ffb6c1;
+/* Specific colors for each menu item's title */
+.menu-item:nth-of-type(1) .item-title {
+    background-color: #ff9999; /* Chicken */
 }
 
-.beef {
-    background-color: #cd5c5c;
+.menu-item:nth-of-type(2) .item-title {
+    background-color: #ff6666; /* Beef */
 }
 
-.sushi {
-    background-color: #f0e68c;
-}
-
-p {
-    padding: 10px;
-    margin: 0;
+.menu-item:nth-of-type(3) .item-title {
+    background-color: #ffd966; /* Sushi */
 }
 
 /* Desktop view */
