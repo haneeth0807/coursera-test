@@ -1,41 +1,48 @@
-body {
-    font-family: Arial, sans-serif;
+/* Global styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
 }
 
 header {
     text-align: center;
-    padding: 20px 0;
+    margin-bottom: 20px;
 }
 
 h1 {
-    margin: 0;
+    font-size: 2em;
+    color: #333;
 }
 
-.menu-container {
+.container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    gap: 15px;
 }
 
+/* Section styling */
 .menu-item {
-    width: 30%;
-    min-width: 250px;
-    margin-bottom: 20px;
-    background-color: #a9a9a9;
+    background-color: #d3d3d3;
     border: 1px solid #000;
-    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+    flex: 1 1 30%;
+}
+
+.menu-item p {
+    margin-top: 40px; /* Ensures space below the title */
 }
 
 .item-title {
-    text-align: center;
-    margin: 0;
-    color: #fff;
+    background-color: #ff9999; /* Change this color for different sections */
+    color: #000;
     border: 1px solid #000;
     padding: 5px 10px;
     position: absolute;
@@ -44,31 +51,41 @@ h1 {
     font-weight: bold;
 }
 
-.chicken {
-    background-color: #ffb6c1;
+/* Specific colors for each menu item's title */
+.menu-item:nth-of-type(1) .title {
+    background-color: #ff9999; /* Chicken */
 }
 
-.beef {
-    background-color: #cd5c5c;
+.menu-item:nth-of-type(2) .title {
+    background-color: #ff6666; /* Beef */
 }
 
-.sushi {
-    background-color: #f0e68c;
+.menu-item:nth-of-type(3) .title {
+    background-color: #ffd966; /* Sushi */
 }
 
-p {
-    padding: 10px;
-    margin: 0;
-}
-
-@media (max-width: 768px) {
+/* Desktop view */
+@media (min-width: 992px) {
     .menu-item {
-        width: 45%;
+        flex: 1 1 calc(33.33% - 15px); /* 3 items in a row */
     }
 }
 
-@media (max-width: 480px) {
+/* Tablet view */
+@media (min-width: 768px) and (max-width: 991px) {
     .menu-item {
-        width: 100%;
+        flex: 1 1 calc(50% - 15px); /* 2 items in the first row */
+    }
+
+    .menu-item:nth-of-type(3) {
+        flex: 1 1 100%; /* 3rd item takes the whole row */
     }
 }
+
+/* Mobile view */
+@media (max-width: 767px) {
+    .menu-item {
+        flex: 1 1 100%; /* Each item takes the full width */
+    }
+}
+
