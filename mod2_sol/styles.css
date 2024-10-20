@@ -41,7 +41,7 @@ h1 {
     margin-top: 40px; /* Ensures space below the title */
 }
 
-.title {
+.item-title {
     background-color: #ff9999; /* Change this color for different sections */
     color: #000;
     border: 1px solid #000;
