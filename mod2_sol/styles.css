@@ -32,15 +32,16 @@ h1 {
     background-color: #d3d3d3;
     border: 1px solid #000;
     padding: 20px;
-    position: relative;
+    position: relative; /* Ensure the title is positioned relative to this */
     flex: 1 1 30%;
+    min-height: 200px; /* Ensures a minimum height to accommodate content */
 }
 
 .menu-item p {
     margin-top: 40px; /* Ensures space below the title */
 }
 
-.item-title {
+.title {
     background-color: #ff9999; /* Change this color for different sections */
     color: #000;
     border: 1px solid #000;
@@ -88,4 +89,3 @@ h1 {
         flex: 1 1 100%; /* Each item takes the full width */
     }
 }
-
